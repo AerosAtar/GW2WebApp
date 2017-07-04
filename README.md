@@ -1,11 +1,11 @@
-#Guild Wars 2 Web App
+# Guild Wars 2 Web App
 A javascript web app utilising the Guild Wars 2 API.
 
 <!-- START doctoc -->
 <!-- END doctoc -->
 
-##User Guide
-###How to obtain a personal API key
+## User Guide
+### How to obtain a personal API key
 Open your favourite browser and navigate to your arena net account page (https://account.arena.net/), then navigate to the Applications page.
 
 Create a <em>New Key</em> with the following options enabled:
@@ -24,7 +24,7 @@ Do not set the `guilds` permission, as this will be covered by a second API key 
 
 This key is entered under the `Personal Key` field in the app.
 
-###How to obtain a guild API key if you are a guild leader
+### How to obtain a guild API key if you are a guild leader
 Open your favourite browser and navigate to your arena net account page (https://account.arena.net/), then navigate to the Applications page.
 
 Create a <em>New Key</em> with the following options enabled:
@@ -36,8 +36,8 @@ This key can be freely passed out to your guild members or anyone else you wish 
 
 This key is entered under the `Guild Key` field in the app.
 
-##Developer Setup
-###Git Installation and Configuration
+## Developer Setup
+### Git Installation and Configuration
 First of all, <a href="https://git-scm.com/downloads">download</a> and install git for your operating system. In Windows, if prompted for how to handle line endings, select the "Checkout Windows-style, commit Unix-style" option. If using Windows, open a git bash (which should have a shortcut in the start menu, but is located at `<git-install-dir>/bin/sh.exe`). If using linux of OS-X, open up a console/terminal window.
 
 To ensure git is on your path, run:
@@ -61,14 +61,14 @@ If the returned value of `core.autocrlf` is set to anything other than `true`, o
 
 You may additionally want to configure other options in git (for example, your editor tool). You are encouraged to refer to the freely available <a href="https://git-scm.com/book/en/v2">Pro Git</a> book for a comprehensive guide on how to configure and use git.
 
-###Clone the Repository
+### Clone the Repository
 Open a git bash shell (or equivalent in your OS) and navigate to a suitable directory to clone the repository.
 
 Clone the repository and cd into it:
 
     git clone https://github.com/AerosAtar/GW2WebApp.git && cd GW2WebApp
 
-###NodeJS Installation and Configuration
+### NodeJS Installation and Configuration
 <a href="https://nodejs.org/en/download/">Download</a> and install Node.js for your operating system. If using Windows, open a git bash shell. If using linux of OS-X, open up a console/terminal window.
 
 To ensure node is on your path, run:
@@ -76,7 +76,7 @@ To ensure node is on your path, run:
     > node --version
     vx.xx.x
 
-###Yarn Installation and Configuration
+### Yarn Installation and Configuration
 <a href="https://yarnpkg.com/en/docs/install">Download</a> and install Yarn for your operating system. If using Windows, open a git bash shell. If using linux of OS-X, open up a console/terminal window.
 
 To ensure yarn is on your path, run:
@@ -88,7 +88,7 @@ Install yarn dependencies:
 
     > yarn install
 
-###Webpack Installation and Configuration
+### Webpack Installation and Configuration
 If using Windows, open a git bash shell. If using linux of OS-X, open up a console/terminal window.
 
 Install Webpack:
@@ -99,28 +99,28 @@ Install webpack dependencies:
 
     > webpack install
 
-###Test the Installation was Successful
+### Test the Installation was Successful
 Serve the web app locally to ensure everything is working:
 
     > yarn start
 
-##Repository Structure
+## Repository Structure
 The following directories exist at the root of the web app repository. The following sections will briefly describe the contents of these directories, and what should go in them.
 
-###`app`
+### `app`
 This is the folder that houses the main code base for the web app. Any code that will be used by the web app should be placed here (in the respective subdirectory). Each subdirectory of this directory contains its own README.md file, which has guidance on what belongs in that subdirectory.
 
-###`node_modules`
+### `node_modules`
 This directory is listed in the `.gitignore` file, but will be present once a npm install has been run. This directory houses all of the yarn modules that are listed in the `package.json` file.
 
-###`test`
+### `test`
 This directory contains any data produced by the unit testing framework.
 
-##Style Guide
+## Style Guide
 This section will briefly outline the naming conventions and general style guidelines that should be used in the web app.
 
-###Naming Conventions
-####File Names 
+### Naming Conventions
+#### File Names 
 Javascript and Typescript files for angular components should use the component name in `spinal-case` suffixed with the type of component they represent, using a `.` to separate name parts. For example:
 
 * `my-component-name.directive.js`
@@ -142,7 +142,7 @@ Javascript and Typescript files containing unit tests for a component should be 
       |- my-component-directive.js
       |- my-component-directive.test.js
 
-####Component Names
+#### Component Names
 These are the names that are used to register the components with Angular (e.g. `myModule.directive('myDirective')` or `myModule.filter('myFilter')`). Directives, services, factories and filters should register names in `camelCase`, whereas controllers should use `UpperCamelCase`, as these should be constructors. Controller names, and the name of the function that defines the controller, should be suffixed with `Ctrl` for easy recognition:
 
     var MyComponentCtrl = function() {
@@ -156,8 +156,8 @@ Directive names should be prefixed with `wn` to make them easily identifiable in
 
 Services, factories and filters _should not_ be prefixed with a `$`, so as to avoid naming collisions with Angular internal services.
 
-###Angular Style Guide
-####Controllers
+### Angular Style Guide
+#### Controllers
 Controllers should be focused on the view that they are associated with. Generally, it does not make sense to reuse controller logic. In such cases where this might be desirable, extract the logic into a reusable service instead, as this can then be injected into multiple controllers.
 
 Use the "controller as" pattern when defining controllers, and define a view model object inside the controller to hold any properties that need to be exposed to the view, rather than exposing properties via an injected `$scope`:
@@ -212,7 +212,7 @@ Any startup logic for a controller (logic that needs to be run the first time th
     
 You should avoid DOM manipulation in controller code. If DOM manipulation is required, you should probably be using a directive.
 
-####Directives
+#### Directives
 Each directive should be defined in its own file to maintain modularity and avoid confusion. If DOM manipulation is required inside a directive, this should be carried out inside the directive's `link` function, and not in its `controller`.
 
 Directives should clean up after themselves. Any cleanup code can be executed by listening to the `$destroy` event on the `$scope`:
@@ -340,33 +340,33 @@ Now, if `my-directive` makes changes to its `foo` scope property, this will not 
     <my-directive foo="baz"></mydirective>
     <my-directive foo="qux"></mydirective>
 
-##Common Development Tasks
-###Adding a New View
+## Common Development Tasks
+### Adding a New View
 1. Create a new subdirectory for your view under the app/views directory.
 2. Any javascript/typescript or HTML code for your view should live in this directory, including the unit tests for your view (if any). It is most likely that you view will consist of a `my-view.html` file and possible a `my-view.controller.ts` file. However, any services, filters, factories or constants files that are specific to your view should also live in this directory.
 3. Add a `my-view.routes.ts` file to declare the routes for your view.
 4. If your view requires any specific styles, add a `_my-view.scss` file containing your view-specific styles to the `app/assets/scss/partials` directory. Any `.scss` files in this directory will be added to the `app/assets/scss/main.scss` imports list automatically when running `gulp serve` or `gulp build`.
 5. Run `gulp serve` to test your view - the javascript for the view will be added to `app/index.html` automatically as part of the `serve` task (they will also be added as part of the build tast if you would rather run `gulp serve:dist` or `gulp build`).
 
-###Adding a New Component
+### Adding a New Component
 1. Create a new subdirectory for your component under the `app/components` directory.
 2. Any javascript/typescript or HTML code for your component should live in this directory, including the unit tests for your component (if any). It is most likely that you component will consist of a `my-component.html` file and possible a `my-component.controller.ts` file. However, any services, filters, factories or constants files that are specific to your component should also live in this directory.
 3. If your component requires any specific styles, add a `_my-component.scss` file containing your view-specific styles to the `app/assets/scss/partials` directory. Any `.scss` files in this directory will be added to the `app/assets/scss/main.scss` imports list automatically when running `gulp serve` or `gulp build`.
 4. When you have added the component to any view that you would like it to be in, run `gulp serve` to test your component - the javascript for the view will be added to `app/index.html` automatically as part of the `serve` task (they will also be added as part of the `build` task if you would rather run `gulp serve:dist` or `gulp build`).
 
-###Adding a Common Injectable
+### Adding a Common Injectable
 1. Create a javascript/typescript file for your injectable inside the relevant subdirectory of `app/common`. If creating an Angular service, you should creae a `my.service.js` file inside the `app/common/servies` directory, whereas filters belong in the `app/common/filters` directory, etc.
 2. Run `gulp serve` to test your injectable - any javascript files inside the `app/common` directory will be added to `app/index.html` automatically as part of the `serve` task (they will also be added as part of the `build` task if you would rather run `gulp serve:dist` or `gulp build`).
 
-###Mocking a HTTP Endpoint in `gulp serve`
+### Mocking a HTTP Endpoint in `gulp serve`
 1. Create a javascript file defining your HTTP endpoint inside the `server/services` directory. This should be a Node.js module, and should expose a function that takes a single arguement: `server`. This is an <a href="http://expressjs.com">Express</a> server, which you can use to configure the HTTP endpoint (see <a href://expressjs.com/4x/api.html#app>here</a> for how to do this, or use an existing endpoint as a template).
 2. If you are currently running the `gulp serve` task,you will need to kill the task and restart it for the change to take effect.
 3. Your endpoint should now be available on `http://localhost:3000`.
 
-##Unit Testing
+## Unit Testing
 Any piece of javascript code that provides any piece of non-trivial functionality should be unit tested wherever possible. The web app project's unit testing framework uses <a href="http://jasmine.github.io">Jasmine</a> as its unit testing language, and <a href="http://karma-runner.github.io">Karma</a> as a test runner. Angular's `ngMock` module is used to assist in mocking Angular components and services. Code coverage information is also gathered using the `karma-coverage` module, which uses the <a href="https://github.com/gotwarlost//istanbul">Istanbul</a> coverage framework internally. The following provides a guide to how to write unit tests, and several of the Angular-specific quirks that you may come across whilst writing unit tests for an Angular application.
 
-###Folder Structure and Naming Conventions
+### Folder Structure and Naming Conventions
 The unit tests for a component should all be placed in a single file, and any unit test file should only contain unit tests for a single component. This unit test file should be placed in the same directory as the component that it is testing, and the file should be suffixed with `test`, using a `.` as a separator. For example, if we have written a component that contains a directive and a service specific to that component, the directory should look something like this:
 
     - my-component
@@ -386,10 +386,10 @@ The Jasmine test suites should use the same name as the name of your component, 
     
 Note that each test file should contain exactly one test suite( `describe` invocation), which may contain one or many test specs (`it` invocations). For a thorough guide to writing unit tests with Jasmine, see the <a href="http://jasmine.github.io/pages/docs_home.html">Jasmine documentation pages</a>.
 
-###Using `ngMock`
+### Using `ngMock`
 The `ngMock` module provides a range of functions and mock services to assist in unit testing Angular apps. The following provides a guide to may of the useful features of the `ngMock` module. For additional information, see the <a href="https://docs.angularjs.org/guide/unit-testing">Angular unit testing documentation</a>.
 
-####Loading Modules
+#### Loading Modules
 When unit testing any component of an Angular module, the first thing that you will need to do is to inject that module using the `module` global function provided by `ngMock`:
 
     describe('my-component', function() {
@@ -405,7 +405,7 @@ When unit testing any component of an Angular module, the first thing that you w
       });
     });
     
-####Injecting Services
+#### Injecting Services
 In order to test certain features, you will frequently need to access injectable services inside your unit tests, either from core Angular, or from your own module. This can be achieved by using `ngMock`'s global `inject` function:
 
     describe('my-service', function() {
@@ -433,7 +433,7 @@ Here, we inject Angular's `$http` service as well as our own `myService` service
     inject(function($http_) {});    // invalid
     inject(function(__$http__) {}); // invalid
     
-####Using `$httpBackend`
+#### Using `$httpBackend`
 In several cases, you may be testing a component which needs to make HTTP calls via the `$http` service. `ngMock` provides a fake HTTP backend implementation, `$httpBackend`, that will catch calls from the `$http` service. If a component needs to make HTTP requests through the `$http` service, then we need to tell `$httpBackend` to expect these HTTP requests and dictate its behaviour upon receiving the requests.
 
 In order to preserve the asynchronous API for the real HTTP backend, the `$httpBackend` provided by `ngMock` exposes a `flush` function, which will flush any pending `$http` requests, and respond with the pre-prepared responses.
@@ -493,7 +493,7 @@ We might unit test this service as follows:
     
 For further information on using the `$httpBackend` provided by `ngMock`, see the <a href="http://docs.angularjs.org/api/ngMock/service/$httpBackend">`$httpBackend` documentation</a>.
 
-####Testing `$interval` and `$timeout`
+#### Testing `$interval` and `$timeout`
 In order to test components that make use of the `$interval` and `$timeout` services provided by Angular, the `ngMock` module provides mocks for these services that provide additional `flush` methods, and in the case of the mock `$timeout` service, a `verifyNoPendingTasks` method to check that there are no tasks which haven't been flushed.
 
 Let's look at testing a service that uses `$timeout`:
@@ -594,8 +594,8 @@ And a test for the service:
       });
     });
 
-###Common Angular Testing Patterns
-####Testing a Service
+### Common Angular Testing Patterns
+#### Testing a Service
 Testing services should be fairly straighforward. All we need to do is load the module containing the service, and then inject the service into our test suite:
 
     describe('my-service', function() {
@@ -613,7 +613,7 @@ Testing services should be fairly straighforward. All we need to do is load the 
       });
     });
 
-####Testing a Filter
+#### Testing a Filter
 This is similar to testing a service. We can access the desired filter by injecting the Angular `$filter` service:
 
     describe('my-filter', function() {
@@ -631,7 +631,7 @@ This is similar to testing a service. We can access the desired filter by inject
       });
     });
     
-####Testing a Controller
+#### Testing a Controller
 To test a standalone controller, we just need to instantiate the controller using Angular's `$controller` service, which we can inject in the usual way:
 
     describe('MyCtrl', function() {
@@ -659,7 +659,7 @@ To test a standalone controller, we just need to instantiate the controller usin
       });
     });
 
-####Testing a Directive
+#### Testing a Directive
 Testing a directive is slightly more complicated than testing other Angular components. In order to test a directive, we need to first compile the directive from HTML in order to get access to both the directive's HTML element and its controller, if necessary:
 
     describe('my-directive', function() {

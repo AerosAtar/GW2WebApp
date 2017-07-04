@@ -1,9 +1,9 @@
-##README - config
+## README - config
 
 <!-- START doctoc -->
 <!-- END doctoc -->
 
-###What belongs in the config folder?
+### What belongs in the config folder?
 The `config` folder is for holding application 
 configuration files. Generally these will be javascript
 files that contain configuration for various parts of

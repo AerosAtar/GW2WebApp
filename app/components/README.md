@@ -1,9 +1,9 @@
-##README - components
+## README - components
 
 <!-- START doctoc -->
 <!-- END doctoc -->
 
-###What belongs in the components folder?
+### What belongs in the components folder?
 
 The `components` folder is for holding code for smaller 
 UI components and widgets that can be common to multiple
@@ -11,7 +11,7 @@ views. For example, a custom drop-down menu that can be
 used by multiple views would belong in the `components`
 folder.
 
-###How is the components folder structured?
+### How is the components folder structured?
 
 Each component should have its own subdirectory in the 
 `components` folder. This should contain _all_ code

@@ -1,9 +1,9 @@
-##README - views
+## README - views
 
 <!-- START doctoc -->
 <!-- END doctoc -->
 
-##What belongs in the views folder?
+## What belongs in the views folder?
 The `views` folder is for holding code specific to a
 particular page of the application. For example, you
 might have a view for the homepage, a view for the
@@ -13,7 +13,7 @@ UI components and widgets that could be common to
 several pages should _not_ be placed in the `views`
 folder - they belong in the `components` folder.
 
-##How is the views folder structured?
+## How is the views folder structured?
 Each separate view for the application should have its
 own subdirectory in the `views` folder. This should
 contain _all_ code specific to that view, with the
