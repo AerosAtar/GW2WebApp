@@ -1,8 +1,50 @@
 # Guild Wars 2 Web App
 A javascript web app utilising the Guild Wars 2 API.
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [User Guide](#user-guide)
+  - [How to obtain a personal API key](#how-to-obtain-a-personal-api-key)
+  - [How to obtain a guild API key if you are a guild leader](#how-to-obtain-a-guild-api-key-if-you-are-a-guild-leader)
+- [Developer Setup](#developer-setup)
+  - [Git Installation and Configuration](#git-installation-and-configuration)
+  - [Clone the Repository](#clone-the-repository)
+  - [NodeJS Installation and Configuration](#nodejs-installation-and-configuration)
+  - [Yarn Installation and Configuration](#yarn-installation-and-configuration)
+  - [Webpack Installation and Configuration](#webpack-installation-and-configuration)
+  - [Test the Installation was Successful](#test-the-installation-was-successful)
+- [Repository Structure](#repository-structure)
+  - [`app`](#app)
+  - [`node_modules`](#node_modules)
+  - [`test`](#test)
+- [Style Guide](#style-guide)
+  - [Naming Conventions](#naming-conventions)
+    - [File Names](#file-names)
+    - [Component Names](#component-names)
+  - [Angular Style Guide](#angular-style-guide)
+    - [Controllers](#controllers)
+    - [Directives](#directives)
+- [Common Development Tasks](#common-development-tasks)
+  - [Adding a New View](#adding-a-new-view)
+  - [Adding a New Component](#adding-a-new-component)
+  - [Adding a Common Injectable](#adding-a-common-injectable)
+  - [Mocking a HTTP Endpoint in `gulp serve`](#mocking-a-http-endpoint-in-gulp-serve)
+- [Unit Testing](#unit-testing)
+  - [Folder Structure and Naming Conventions](#folder-structure-and-naming-conventions)
+  - [Using `ngMock`](#using-ngmock)
+    - [Loading Modules](#loading-modules)
+    - [Injecting Services](#injecting-services)
+    - [Using `$httpBackend`](#using-httpbackend)
+    - [Testing `$interval` and `$timeout`](#testing-interval-and-timeout)
+  - [Common Angular Testing Patterns](#common-angular-testing-patterns)
+    - [Testing a Service](#testing-a-service)
+    - [Testing a Filter](#testing-a-filter)
+    - [Testing a Controller](#testing-a-controller)
+    - [Testing a Directive](#testing-a-directive)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## User Guide
 ### How to obtain a personal API key
