@@ -38,7 +38,7 @@ Thumbs.db
 ############
 *.ipr
 *.iws
-.idea
+.idea/
 
 # Maven #
 #########
