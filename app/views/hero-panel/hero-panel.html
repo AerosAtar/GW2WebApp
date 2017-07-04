@@ -1,0 +1,97 @@
+<style>
+    #main-container {
+        border: 1px solid black;
+        margin: 5px;
+    }
+    #main-header {
+        border: 1px solid black;
+        margin: 5px;
+
+        height: 90px;
+    }
+    #main-logo {
+        border: 1px solid black;
+
+        float: left;
+        margin: -5px;
+        height: 90px;
+        width: 140px;
+    }
+    #main-title {
+        border: 1px solid black;
+        margin: 5px;
+        font-size: x-large;
+
+        padding-left: 140px;
+    }
+    #main-nav {
+        border: 1px solid black;
+        margin: 5px;
+
+        display: inline-flex;
+        flex-direction: column;
+        height: 1000px;
+        width: 100px;
+        margin-left: 40px;
+    }
+    .main-nav-item {
+        border: 1px solid black;
+
+        height: 90px;
+        width: 90px;
+        margin: 5px;
+    }
+    #content-container {
+        border: 1px solid black;
+        margin: 5px;
+
+        display: inline-flex;
+        height: 1000px;
+        width: calc(100% - 165px);
+    }
+    #container-nav {
+        border: 1px solid black;
+        margin: 5px;
+
+        display: inline-flex;
+        flex-direction: column;
+        width: 25%;
+    }
+    .container-nav-item {
+        border: 1px solid black;
+
+        height: 50px;
+        width: 100%;
+    }
+    #container-content {
+        border: 1px solid black;
+        margin: 5px;
+
+        display: inline-flex;
+        width: 75%;
+    }
+</style>
+
+<div id="main-container">
+    <div id="main-header">
+        <img id="main-logo" src="assets/img/GW2_Logo.jpg">
+        <div id="main-title">Hero Panel</div>
+    </div>
+    <div id="main-nav">
+        <div class="main-nav-item">1</div>
+        <div class="main-nav-item">2</div>
+        <div class="main-nav-item">3</div>
+        <div class="main-nav-item">4</div>
+        <div class="main-nav-item">5</div>
+    </div>
+    <div id="content-container">
+        <div id="container-nav">
+            <div class="container-nav-item">1</div>
+            <div class="container-nav-item">2</div>
+            <div class="container-nav-item">3</div>
+            <div class="container-nav-item">4</div>
+            <div class="container-nav-item">5</div>
+        </div>
+        <div id="container-content">2-4-2</div>
+    </div>
+</div>

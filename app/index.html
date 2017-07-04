@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guild Wars 2 Web Application</title>
+
+    <!-- Placeholder until site is converted to angular -->
+    <script src="w3.js"></script>
+    <!-- End placeholder -->
+
+    <style>
+
+        #app-header {
+            border: 1px solid black;
+            margin: 5px;
+        }
+        #app-logo {
+            border: 1px solid black;
+            margin: 5px;
+
+            display: inline;
+            width: 140px;
+        }
+        #app-title {
+            border: 1px solid black;
+            margin: 5px;
+            font-size: xx-large;
+
+            display: inline;
+        }
+
+        #app-nav {
+            border: 1px solid black;
+            margin: 5px;
+
+            display: flex;
+            height: 50px;
+        }
+        .app-nav-item {
+            border: 1px solid black;
+            margin: 5px;
+
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="app-header">
+        <div id="app-logo">
+            <img src="assets/img/GW2_Logo.jpg" style="width: 140px;">
+        </div>
+        <div id="app-title">Guild Wars 2 Web Application</div>
+    </div>
+
+    <!-- Placeholder until site is converted to angular -->
+    <div id="app-nav">
+        <button class="app-nav-item">Hero Panel</button>
+        <button class="app-nav-item">Inventory</button>
+        <button class="app-nav-item"></button>
+        <button class="app-nav-item"></button>
+        <button class="app-nav-item">Settings</button>
+    </div>
+    <div id="main" w3-include-html="views/hero-panel/hero-panel.html"></div>
+    <script>
+        w3.includeHTML();
+    </script>
+    <!-- End placeholer -->
+
+</body>
+</html>
