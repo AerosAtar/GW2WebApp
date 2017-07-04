@@ -1,4 +1,4 @@
-##Guild Wars 2 Web App
+#Guild Wars 2 Web App
 A javascript web app utilising the Guild Wars 2 API.
 
 <!-- START doctoc -->
