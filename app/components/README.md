@@ -21,7 +21,7 @@ code. This includes the tests for that component.
 For example, the file structure for a component might
 look like this:
 
-    -views  
+    -components  
       |- dropdown   
           |- dropdown.component.ts    
           |- dropdown.component.test.ts
